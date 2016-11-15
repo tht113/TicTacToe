@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60" fx:controller="tictactoe.FXMLDocumentController">
+<AnchorPane id="AnchorPane" fx:id="stageOne" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tictactoe.FXMLDocumentController">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
       <GridPane layoutY="40.0" prefHeight="359.0" prefWidth="330.0">
@@ -33,7 +33,7 @@
             <Button fx:id="btnBottomLeft" mnemonicParsing="false" prefHeight="153.0" prefWidth="218.0" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Button fx:id="btnNewGame" layoutX="66.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="New Game" />
-      <Button fx:id="btnCloseGame" layoutX="165.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Close Game!" />
+      <Button fx:id="btnNewGame" layoutX="66.0" layoutY="14.0" mnemonicParsing="false" onAction="#newGame" prefHeight="25.0" prefWidth="90.0" text="New Game" />
+      <Button fx:id="btnCloseGame" layoutX="165.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeApp" prefHeight="25.0" prefWidth="90.0" text="Close Game!" />
     </children>
 </AnchorPane>
