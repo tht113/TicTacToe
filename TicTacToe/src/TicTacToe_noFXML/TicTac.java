@@ -6,6 +6,8 @@
 package TicTacToe_noFXML;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -26,6 +28,7 @@ public class TicTac extends Application
        
         //Pane Declarations
         BorderPane root = new BorderPane();
+        Scene scene = new Scene(root, 300, 300);
         GridPane grid = new GridPane();
         HBox hbTop = new HBox();
         HBox hbCenter = new HBox();
@@ -42,6 +45,27 @@ public class TicTac extends Application
         Button btnSix = new Button();
         Button btnSeven = new Button();
         Button btnEight = new Button();
+       
+        
+    //-----------Adding to the Grid-----------\\
+    
+        grid.getChildren().add(btnZero);
+        grid.getChildren().add(btnOne);
+        grid.getChildren().add(btnTwo);
+        grid.getChildren().add(btnThree);
+        grid.getChildren().add(btnFour);
+        grid.getChildren().add(btnFive);
+        grid.getChildren().add(btnSix);
+        grid.getChildren().add(btnSeven);
+        grid.getChildren().add(btnEight);        
+        
+    //-----------Setting up Buttons-----------\\
+    
+        //New game Button
+        newGame.setText("New Game!");
+        
+        //Close Game
+        closeGame.setText("Close!");
         
     //-----------Adding Buttons to HBoxes-----------\\
         
@@ -50,20 +74,36 @@ public class TicTac extends Application
         hbTop.getChildren().add(closeGame);
         
         //HBox hbCenter
-        hbTop.getChildren().add(btnZero);
-        hbTop.getChildren().add(btnOne);
-        hbTop.getChildren().add(btnTwo);
-        hbTop.getChildren().add(btnThree);
-        hbTop.getChildren().add(btnFour);
-        hbTop.getChildren().add(btnFive);
-        hbTop.getChildren().add(btnSix);
-        hbTop.getChildren().add(btnSeven);
-        hbTop.getChildren().add(btnEight);
+        hbCenter.getChildren().add(grid);
+        
         
     //-----------Aligning and Sizing HBox-----------\\
     
         //HBox hbTop
-        hbTop.
+        hbTop.setAlignment(Pos.CENTER);
+        hbTop.setSpacing(5);
+        hbTop.setMinWidth(20);
+        hbTop.setMinHeight(10);
+        
+        //HBox hbCenter
+        hbCenter.setAlignment(Pos.CENTER);
+        hbCenter.setMinWidth(10);
+        hbCenter.setMinHeight(20);
+       
+
+    //-----------Adding to the BorderPane-----------\\
+    
+        root.setTop(hbTop);
+        root.setCenter(hbCenter);
+        
+        
+        
+
+    //-----------Setting the Stage-----------\\
+        
+        primaryStage.setTitle("Tic Tac Toe");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     /**
