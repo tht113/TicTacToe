@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 
 /**
@@ -49,15 +50,38 @@ public class TicTac extends Application
         
     //-----------Adding to the Grid-----------\\
     
-        grid.getChildren().add(btnZero);
-        grid.getChildren().add(btnOne);
-        grid.getChildren().add(btnTwo);
-        grid.getChildren().add(btnThree);
-        grid.getChildren().add(btnFour);
-        grid.getChildren().add(btnFive);
-        grid.getChildren().add(btnSix);
-        grid.getChildren().add(btnSeven);
-        grid.getChildren().add(btnEight);        
+        //Adding Buttons to Grid
+        grid.add(btnZero, 0 ,0);
+        grid.add(btnOne, 0 , 1);
+        grid.add(btnTwo, 0 , 2);
+        grid.add(btnThree, 1 , 0);
+        grid.add(btnFour, 1 , 1);
+        grid.add(btnFive, 1 , 2);
+        grid.add(btnSix , 2 , 0);
+        grid.add(btnSeven, 2 , 1);
+        grid.add(btnEight, 2 , 2);
+
+        //Making buttons take up max width
+        btnZero.setPrefWidth(Integer.MAX_VALUE);
+        btnOne.setPrefWidth(Integer.MAX_VALUE);
+        btnTwo.setPrefWidth(Integer.MAX_VALUE);
+        btnThree.setPrefWidth(Integer.MAX_VALUE);
+        btnFour.setPrefWidth(Integer.MAX_VALUE);
+        btnFive.setPrefWidth(Integer.MAX_VALUE);
+        btnSix.setPrefWidth(Integer.MAX_VALUE);
+        btnSeven.setPrefWidth(Integer.MAX_VALUE);
+        btnEight.setPrefWidth(Integer.MAX_VALUE);
+        
+        //Making buttons take up mex height
+        btnZero.setPrefHeight(Integer.MAX_VALUE);
+        btnOne.setPrefHeight(Integer.MAX_VALUE);
+        btnTwo.setPrefHeight(Integer.MAX_VALUE);
+        btnThree.setPrefHeight(Integer.MAX_VALUE);
+        btnFour.setPrefHeight(Integer.MAX_VALUE);
+        btnFive.setPrefHeight(Integer.MAX_VALUE);
+        btnSix.setPrefHeight(Integer.MAX_VALUE);
+        btnSeven.setPrefHeight(Integer.MAX_VALUE);
+        btnEight.setPrefHeight(Integer.MAX_VALUE);
         
     //-----------Setting up Buttons-----------\\
     
@@ -104,13 +128,6 @@ public class TicTac extends Application
         primaryStage.setTitle("Tic Tac Toe");
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
     }
     
 }
